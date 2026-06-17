@@ -18,10 +18,23 @@ export interface Journey {
  * Experience type (Duration/Plan)
  */
 export interface ExperienceType {
-  id: 'day-use' | 'weekly-plan' | 'stay-retreat';
+  id: string;
   name: string;
   duration: string;
   description: string;
+}
+
+/**
+ * Program type for luxury retreat
+ */
+export interface Program {
+  id: string;
+  name: string;
+  duration: string;
+  description: string;
+  experienceCount: string;
+  includesAccommodation: boolean;
+  applicableJourneys: string[];
 }
 
 /**

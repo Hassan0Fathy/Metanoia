@@ -4,10 +4,7 @@ import { motion } from 'framer-motion';
 import NextLink from 'next/link';
 import Image from 'next/image';
 import { ZONES, JOURNEY_TYPES, BRAND, EXPERIENCE_TYPES } from '@/lib/constants';
-
-const IMAGES = {
-  cat1: '/images/BTPBFkviPt8PjEX_yJFXVYWFehggOAZR12GhDsvm8mRcMXx5Mvme0UHWASo__-hENZUpuEGCpTsxLQRgXFg-JKVi7Ly-62Q5b_DAFCGxHuk-tkTxHkiA9hfo0Km1Pooy4.jpeg',
-};
+import { IMAGE_MAP } from '@/lib/imageMap';
 
 export default function HomePage() {
   return (
@@ -21,7 +18,7 @@ export default function HomePage() {
           className="absolute inset-0 z-0"
         >
           <Image 
-             src="/images/123.jpeg" 
+             src={IMAGE_MAP.hero} 
              fill
              priority
              className="object-cover brightness-[0.65]" 
@@ -80,7 +77,7 @@ export default function HomePage() {
               <div className="relative w-full lg:w-1/2 group">
                  <div className="aspect-[4/3] md:aspect-[16/9] overflow-hidden image-reveal shadow-luxury">
                     <Image 
-                      src={zone.image || IMAGES.cat1} 
+                      src={zone.image || IMAGE_MAP.fallback} 
                       alt={zone.name} 
                       fill
                       className="object-cover"
@@ -152,7 +149,7 @@ export default function HomePage() {
               <NextLink key={journey.id} href={`/experiences?journey=${journey.id}`} className="group space-y-4 md:space-y-6 block">
                  <div className="aspect-[3/4] overflow-hidden relative shadow-luxury">
                     <Image 
-                      src={journey.image || IMAGES.cat1} 
+                      src={IMAGE_MAP.journeys[journey.id as keyof typeof IMAGE_MAP.journeys] || IMAGE_MAP.fallback} 
                       alt={journey.title} 
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-[2s] ease-out" 
