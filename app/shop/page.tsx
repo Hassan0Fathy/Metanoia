@@ -8,7 +8,7 @@ const IMAGES = {
   hero: '/images/Ezv14wqiR7tFGq0zv77AXr334JC3WIBE40OtpizEVSQjUqJ2AA51qiEj0CdvzqiUPhvntLxdA1DBN6LLxF4Ubs5kLZVlFoDNl-1AFRO5yVvbNoY-9g388Jk19a9s4.jpeg',
   cat1: '/images/BTPBFkviPt8PjEX_yJFXVYWFehggOAZR12GhDsvm8mRcMXx5Mvme0UHWASo__-hENZUpuEGCpTsxLQRgXFg-JKVi7Ly-62Q5b_DAFCGxHuk-tkTxHkiA9hfo0Km1Pooy4.jpeg',
   cat2: '/images/123.jpeg',
-  cat3: '/images/WhatsApp Image 2026-06-14 at 5.36.02 PM.jpeg',
+  cat3: '/images/sanctuary-landscape.jpeg',
   banner: '/images/Ezv14wqiR7tFGq0zv77AXr334JC3WIBE40OtpizEVSQjUqJ2AA51qiEj0CdvzqiUPhvntLxdA1DBN6LLxF4Ubs5kLZVlFoDNl-1AFRO5yVvbNoY-9g388Jk19a9s4.jpeg'
 };
 

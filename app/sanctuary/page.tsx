@@ -38,7 +38,7 @@ export default function SanctuaryPage() {
         {[
           { title: 'Hydrotherapy Zone', desc: 'Thermal pools mirroring tidal rhythms.', img: '/images/123.jpeg' },
           { title: 'Quiet Zone', desc: 'Spaces of silence and introspection.', img: '/images/Ezv14wqiR7tFGq0zv77AXr334JC3WIBE40OtpizEVSQjUqJ2AA51qiEj0CdvzqiUPhvntLxdA1DBN6LLxF4Ubs5kLZVlFoDNl-1AFRO5yVvbNoY-9g388Jk19a9s4.jpeg' },
-          { title: 'Landscape Retreat', desc: 'Connection to raw, untamed nature.', img: '/images/WhatsApp Image 2026-06-14 at 5.36.02 PM.jpeg' },
+          { title: 'Landscape Retreat', desc: 'Connection to raw, untamed nature.', img: '/images/sanctuary-landscape.jpeg' },
         ].map((zone, i) => (
           <div key={i} className={`grid md:grid-cols-2 gap-16 items-center ${i % 2 !== 0 ? 'md:grid-flow-dense' : ''}`}>
             <div className={`aspect-[4/5] relative overflow-hidden ${i % 2 !== 0 ? 'md:col-start-2' : ''}`}>

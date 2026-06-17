@@ -13,7 +13,7 @@ export default function HeroSection() {
         className="absolute inset-0"
       >
         <Image 
-           src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiIhGT7xd5wBYOt2PNQp6dgxuQR7w_HahWCXFy880EOUm325ty20ixrpOyVCTMSYu-GnsgsStykWovZ7wilrEh3oI52EjgK-WkRDeRxHksqDQ2w3Vb9-2UIeHWWDg0frN6-Rn3HBlZVX2MArz1vsRVupIaMuzHvcT9D8eNH3G8cJdTjxPAp8WXfmm3gmoF7xXm0u-CUk4S5ENPqoiYMioBZXctcCl4NEiFXWPBUCtd_zKzv27gQGcTJCX_fiRpgV7FOdIDofXoSLpE" 
+           src="/images/123.jpeg" 
            fill
            priority
            className="object-cover brightness-75" 

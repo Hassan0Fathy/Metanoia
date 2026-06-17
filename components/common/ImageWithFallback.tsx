@@ -35,13 +35,15 @@ export function ImageWithFallback({
       </AnimatePresence>
       
       <Image
-        src={error ? fallbackSrc : src}
+        src={error || !src ? fallbackSrc : src}
         alt={alt}
         className={`${className} transition-opacity duration-700 ${loading ? 'opacity-0' : 'opacity-100'}`}
         onLoad={() => setLoading(false)}
         onError={() => {
-          setError(true);
-          setLoading(false);
+          if (!error) {
+            setError(true);
+            setLoading(false);
+          }
         }}
         {...props}
       />
