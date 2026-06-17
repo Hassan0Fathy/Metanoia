@@ -6,10 +6,12 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Suspense } from 'react';
 import { Navigation } from './Navigation';
+import { usePathname } from 'next/navigation';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -23,6 +25,8 @@ export function Header() {
     { href: '/journeys', label: 'Journeys' },
     { href: '/shop', label: 'Organic Shop' },
   ];
+
+  const isActive = (path: string) => pathname === path;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[100] px-4 md:px-8 py-6">
@@ -40,7 +44,7 @@ export function Header() {
 
         {/* Center: Nav */}
         <Suspense fallback={<div className="hidden md:flex items-center gap-10" />}>
-           <Navigation navItems={navItems} scrolled={scrolled} />
+           <Navigation navItems={navItems} scrolled={scrolled} isActive={isActive} />
         </Suspense>
 
         {/* Right: Reserve */}

@@ -148,6 +148,12 @@ export const SHOPS: Shop[] = [
   },
 ];
 
+export const EXPERIENCES = ACTIVITIES.map(activity => ({
+  id: activity.id,
+  title: activity.title,
+  description: `Experience ${activity.title} in our ${activity.zoneId} zone. Duration: ${activity.duration}.`
+}));
+
 export const CONTACT_INFO = {
   phone: '+1 (800) METANOIA',
   email: 'hello@metanoia.com',

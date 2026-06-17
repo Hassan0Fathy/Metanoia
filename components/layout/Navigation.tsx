@@ -1,6 +1,5 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 export function Navigation({
@@ -12,7 +11,6 @@ export function Navigation({
   scrolled: boolean;
   isActive: (path: string) => boolean;
 }) {
-  const pathname = usePathname();
   
   return (
     <nav className="hidden md:flex items-center gap-10">
