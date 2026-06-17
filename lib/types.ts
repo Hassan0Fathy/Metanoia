@@ -6,7 +6,7 @@
  * Journey type
  */
 export interface Journey {
-  id: 'solo' | 'couple' | 'family';
+  id: string;
   title: string;
   subtitle: string;
   description: string;

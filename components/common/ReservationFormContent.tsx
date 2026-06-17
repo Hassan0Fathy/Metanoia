@@ -4,27 +4,21 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { ACTIVITIES, ZONES, JOURNEY_TYPES, PROGRAMS } from '@/lib/constants';
-import { Journey, Program, Activity } from '@/lib/types';
+import { Journey, Program } from '@/lib/types';
 import { 
   Check, 
   Clock, 
   ArrowRight, 
   Calendar, 
-  CreditCard, 
   Download, 
   Smartphone,
   ChevronRight,
-  Info,
   Users,
   Moon,
   Sun,
-  MapPin,
   Sparkles,
-  Ticket,
-  ShieldCheck,
   Compass,
-  Layers,
-  CalendarDays
+  Layers
 } from 'lucide-react';
 import { generatePassPDF } from '@/lib/pdf';
 import QRCode from 'qrcode';
@@ -32,9 +26,9 @@ import { ImageWithFallback } from './ImageWithFallback';
 import { IMAGE_MAP } from '@/lib/imageMap';
 
 const ACCOMMODATIONS = [
-  { id: 'ocean-villa', name: 'Ocean Villa', price: 'Included', image: IMAGE_MAP.accommodation.oceanVilla },
-  { id: 'garden-suite', name: 'Garden Suite', price: 'Included', image: IMAGE_MAP.accommodation.gardenSuite },
-  { id: 'cliff-residence', name: 'Cliff Residence', price: '+$500/night', image: IMAGE_MAP.accommodation.cliffResidence },
+  { id: 'ocean-villa', name: 'Ocean Villa', price: 'Included', image: IMAGE_MAP.accommodation['ocean-villa'] },
+  { id: 'garden-suite', name: 'Garden Suite', price: 'Included', image: IMAGE_MAP.accommodation['garden-suite'] },
+  { id: 'cliff-residence', name: 'Cliff Residence', price: '+$500/night', image: IMAGE_MAP.accommodation['cliff-residence'] },
 ];
 
 const INTENTIONS = [
@@ -593,7 +587,7 @@ export function ReservationFormContent() {
                        
                        {qrCodeUrl && (
                          <div className="bg-white p-5 rounded-[40px] shadow-2xl group-hover:scale-105 transition-transform duration-700 relative">
-                           <img src={qrCodeUrl} alt="QR Key" className="w-28 h-28" />
+                           <Image src={qrCodeUrl} alt="QR Key" width={112} height={112} unoptimized className="w-28 h-28" />
                            <div className="absolute inset-0 rounded-[40px] border border-brown/10 pointer-events-none" />
                          </div>
                        )}

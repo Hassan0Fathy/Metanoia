@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { EXPERIENCES } from '@/lib/constants';
 import HeroSection from '@/components/journeys/HeroSection';
 import StorySection from '@/components/journeys/StorySection';

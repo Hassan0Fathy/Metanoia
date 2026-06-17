@@ -290,28 +290,28 @@ export const ZONES: Zone[] = [
     name: 'Hydrotherapy Zone',
     description: 'Immerse yourself in therapeutic waters designed for physical and mental renewal.',
     facilities: ['Mineral pools', 'Private chambers', 'Infinity vistas'],
-    image: IMAGE_MAP.activities.mineralPool,
+    image: IMAGE_MAP.activities['mineral-pool'],
   },
   {
     id: 'quiet',
     name: 'Quiet Zone',
     description: 'A sanctuary of silence and introspection for deep mental clarity.',
     facilities: ['Yoga pavilion', 'Therapy rooms', 'Curated library'],
-    image: IMAGE_MAP.activities.yogaPavilion,
+    image: IMAGE_MAP.activities['yoga-pavilion'],
   },
   {
     id: 'farm',
     name: 'Organic Farm',
     description: 'Connect with the earth and your own creativity through nature and craft.',
     facilities: ['Pottery studio', 'Organic gardens', 'Apothecary'],
-    image: IMAGE_MAP.activities.farmExperience,
+    image: IMAGE_MAP.activities['farm-experience'],
   },
   {
     id: 'zen',
     name: 'Zen Garden',
     description: 'Minimalist beauty and tranquility for profound meditation.',
     facilities: ['Stone gardens', 'Water features', 'Meditation platforms'],
-    image: IMAGE_MAP.activities.zenMeditation,
+    image: IMAGE_MAP.activities['zen-meditation'],
   },
 ];
 
