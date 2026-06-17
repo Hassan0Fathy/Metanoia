@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ACTIVITIES, ZONES, JOURNEY_TYPES, EXPERIENCE_TYPES } from '@/lib/constants';
-import { ChevronRight, ChevronLeft, Check, Clock, Disc as Bracelet, MapPin, Sparkles, Info, ArrowRight } from 'lucide-react';
+import { Check, Clock, Disc as Bracelet, MapPin, Sparkles, Info, ArrowRight } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
