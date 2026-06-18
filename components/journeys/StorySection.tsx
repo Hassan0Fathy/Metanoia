@@ -31,6 +31,7 @@ export default function StorySection({ journey, isImageLeft, features }: StorySe
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent" />
           </div>
         </motion.div>
 

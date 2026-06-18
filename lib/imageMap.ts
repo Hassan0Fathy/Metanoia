@@ -45,6 +45,9 @@ export const IMAGE_MAP = {
     'pottery-workshop': IMAGES.card2,
     'farm-experience': IMAGES.card3,
     'garden-tour': IMAGES.card1,
+    'harvest-ritual': IMAGES.card2,
+    'farm-to-table': IMAGES.card3,
+    'herbal-tea-ceremony': IMAGES.card1,
     'zen-meditation': IMAGES.card2,
   },
 };

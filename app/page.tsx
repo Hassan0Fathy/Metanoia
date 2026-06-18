@@ -35,7 +35,7 @@ export default function HomePage() {
              transition={{ delay: 0.5, duration: 1 }}
              className="text-[9px] md:text-label-xs uppercase tracking-[0.4em] mb-4 md:mb-6 block font-light"
            >
-             The Art of Becoming
+             Begin the Journey Back to Yourself
            </motion.span>
            <motion.h1 
              initial={{ opacity: 0, y: 20 }}

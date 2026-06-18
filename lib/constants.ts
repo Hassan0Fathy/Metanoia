@@ -262,7 +262,7 @@ export const ACTIVITIES: Activity[] = [
     zoneId: 'farm', 
     duration: '90 min', 
     availableTimes: ['08:00 AM', '10:00 AM'],
-    description: 'Hands-on connection with our organic source of life.'
+    description: 'Reconnect with the rhythm of the land through immersive, hands-on cultivation practices.'
   },
   { 
     id: 'garden-tour', 
@@ -270,7 +270,31 @@ export const ACTIVITIES: Activity[] = [
     zoneId: 'farm', 
     duration: '45 min', 
     availableTimes: ['09:00 AM', '11:00 AM', '03:00 PM'],
-    description: 'Discover the secrets of our sustainable ecosystem.'
+    description: 'A mindful exploration of our lush, sustainable gardens, celebrating the interconnectedness of all living things.'
+  },
+  { 
+    id: 'harvest-ritual', 
+    title: 'Harvest Ritual', 
+    zoneId: 'farm', 
+    duration: '60 min', 
+    availableTimes: ['07:00 AM', '05:00 PM'],
+    description: 'Participate in a sacred gathering, honoring the cycle of growth and the abundance of our earth.'
+  },
+  { 
+    id: 'farm-to-table', 
+    title: 'Farm-to-Table Workshop', 
+    zoneId: 'farm', 
+    duration: '180 min', 
+    availableTimes: ['11:00 AM'],
+    description: 'Transform seasonal, organic yields into nourishing culinary creations that honor the gifts of nature.'
+  },
+  { 
+    id: 'herbal-tea-ceremony', 
+    title: 'Herbal Tea Ceremony', 
+    zoneId: 'farm', 
+    duration: '60 min', 
+    availableTimes: ['02:00 PM', '04:00 PM'],
+    description: 'A serene ritual involving the mindful preparation and consumption of organic, farm-grown herbal infusions to harmonize mind and body.'
   },
   
   // Zen Garden
@@ -345,7 +369,7 @@ export const SHOPS: Shop[] = [
 export const EXPERIENCES = ACTIVITIES.map(activity => ({
   id: activity.id,
   title: activity.title,
-  description: `Experience ${activity.title} in our ${activity.zoneId} zone. Duration: ${activity.duration}.`
+  description: activity.description || `Experience ${activity.title} in our ${activity.zoneId} zone. Duration: ${activity.duration}.`
 }));
 
 export const EXPERIENCE_TYPES: Record<string, ExperienceType> = {

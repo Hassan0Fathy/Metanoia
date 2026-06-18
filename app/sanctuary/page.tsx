@@ -16,7 +16,7 @@ export default function SanctuaryPage() {
           priority
         />
         <div className="relative z-10 text-ivory">
-          <span className="text-xs uppercase tracking-[0.4em] mb-4 block">The Art of Becoming</span>
+          <span className="text-xs uppercase tracking-[0.4em] mb-4 block">Begin the Journey Back to Yourself</span>
           <h1 className="text-display-2xl font-serif italic mb-8">The Sanctuary</h1>
         </div>
       </section>

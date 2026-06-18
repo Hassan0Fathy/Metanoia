@@ -105,10 +105,10 @@ export function ReservationFormContent() {
   };
 
   const renderItineraryPanel = () => (
-    <aside className="w-full lg:w-[400px] bg-white border border-stone-100 rounded-[32px] p-10 shadow-luxury lg:sticky lg:top-32 h-fit space-y-10">
+    <aside className="w-full lg:w-[400px] bg-white border border-stone-200 rounded-[32px] p-10 shadow-2xl lg:sticky lg:top-32 h-fit space-y-10">
       <div className="space-y-2">
         <h3 className="text-2xl font-serif text-brown uppercase tracking-widest">Your Itinerary</h3>
-        <div className="h-px bg-stone-100 w-full" />
+        <div className="h-px bg-stone-200 w-full" />
       </div>
 
       <div className="space-y-8">
