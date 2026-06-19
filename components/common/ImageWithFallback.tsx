@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image, { ImageProps } from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -19,9 +19,44 @@ export function ImageWithFallback({
 }: ImageWithFallbackProps) {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  // Reset loading and error states when the src changes
+  useEffect(() => {
+    setLoading(true);
+    setError(false);
+  }, [src]);
+
+  useEffect(() => {
+    const img = imgRef.current;
+    if (!img) return;
+
+    // If the image has already loaded (e.g. from browser cache)
+    if (img.complete) {
+      setLoading(false);
+      return;
+    }
+
+    const handleLoad = () => {
+      setLoading(false);
+    };
+
+    const handleError = () => {
+      setError(true);
+      setLoading(false);
+    };
+
+    img.addEventListener('load', handleLoad);
+    img.addEventListener('error', handleError);
+
+    return () => {
+      img.removeEventListener('load', handleLoad);
+      img.removeEventListener('error', handleError);
+    };
+  }, [src, error]); // Re-run when src or error state changes to handle fallbacks
 
   return (
-    <div className={`relative overflow-hidden ${containerClassName}`}>
+    <div className={`relative overflow-hidden ${props.fill ? 'w-full h-full' : ''} ${containerClassName}`}>
       <AnimatePresence>
         {loading && (
           <motion.div 
@@ -35,16 +70,10 @@ export function ImageWithFallback({
       </AnimatePresence>
       
       <Image
+        ref={imgRef}
         src={error || !src ? fallbackSrc : src}
         alt={alt}
         className={`${className} transition-opacity duration-700 ${loading ? 'opacity-0' : 'opacity-100'}`}
-        onLoad={() => setLoading(false)}
-        onError={() => {
-          if (!error) {
-            setError(true);
-            setLoading(false);
-          }
-        }}
         {...props}
       />
       
@@ -53,3 +82,4 @@ export function ImageWithFallback({
     </div>
   );
 }
+

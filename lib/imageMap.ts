@@ -1,3 +1,5 @@
+import heroImage from '../public/images/123.jpeg';
+
 /**
  * Centralized image configuration for METANOIA sanctuary
  * Maps logical entities to reliable, high-quality local image paths.
@@ -5,7 +7,7 @@
  */
 
 const IMAGES = {
-  hero: '/images/123.jpeg',
+  hero: heroImage,
   card1: '/images/BTPBFkviPt8PjEX_yJFXVYWFehggOAZR12GhDsvm8mRcMXx5Mvme0UHWASo__-hENZUpuEGCpTsxLQRgXFg-JKVi7Ly-62Q5b_DAFCGxHuk-tkTxHkiA9hfo0Km1Pooy4.jpeg',
   card2: '/images/Ezv14wqiR7tFGq0zv77AXr334JC3WIBE40OtpizEVSQjUqJ2AA51qiEj0CdvzqiUPhvntLxdA1DBN6LLxF4Ubs5kLZVlFoDNl-1AFRO5yVvbNoY-9g388Jk19a9s4.jpeg',
   card3: '/images/sanctuary-landscape.jpeg',
