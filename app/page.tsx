@@ -51,7 +51,7 @@ export default function HomePage() {
              transition={{ delay: 1.2, duration: 1 }}
              className="text-base md:text-xl font-serif italic mb-8 md:mb-12 opacity-90 px-4"
            >
-             A Sanctuary Designed For Human Renewal
+             Restore. Create. Reconnect.
            </motion.p>
 
            <motion.div
@@ -72,7 +72,7 @@ export default function HomePage() {
 
       {/* 2. SANCTUARY PREVIEW (ZONES) */}
       <section className="container-luxury py-12 md:py-24 space-y-16 md:space-y-32">
-         {ZONES.slice(0, 2).map((zone, i) => (
+         {ZONES.map((zone, i) => (
            <div key={zone.id} className={`flex flex-col lg:flex-row items-center gap-8 md:gap-[8vw] ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
               <div className="relative w-full lg:w-1/2 group">
                  <div className="aspect-[4/3] md:aspect-[16/9] overflow-hidden image-reveal shadow-luxury">
@@ -146,7 +146,7 @@ export default function HomePage() {
          
          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {Object.values(JOURNEY_TYPES).map((journey) => (
-              <NextLink key={journey.id} href={`/experiences?journey=${journey.id}`} className="group space-y-4 md:space-y-6 block">
+              <NextLink key={journey.id} href={`/reservation?journey=${journey.id}`} className="group space-y-4 md:space-y-6 block">
                  <div className="aspect-[3/4] overflow-hidden relative shadow-luxury">
                     <Image 
                       src={IMAGE_MAP.journeys[journey.id as keyof typeof IMAGE_MAP.journeys] || IMAGE_MAP.fallback} 

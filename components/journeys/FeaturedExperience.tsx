@@ -26,7 +26,7 @@ export default function FeaturedExperience() {
           {/* Parallax Image */}
           <motion.div style={{ y }} className="absolute inset-0 z-0">
              <Image 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCghPpA7AnlOC304erfqtYwd_OjgnkVlUyxmj6ICxHQVQNMGpvYYEkbTLv8g6SCahV-VAsWBUkrWqMJg65-2sEkNyiCUTVDB5dhwn8EvHtRM891T1PPzq0IB_Gfs1M7IaGgfxJb3bT5u8m42EUI4Vty06saqqsF2P9VUgU5HoMIfOgiWbW5qULTl-kNuIw4zVbK_v_M0tLcuvIKs0qXZPciYIO3GXqcwxLWhio4rlMqY-PSKowNBLgtbsKKmk3ikGZmOV4cR6bizKsN"
+                src="/images/Ezv14wqiR7tFGq0zv77AXr334JC3WIBE40OtpizEVSQjUqJ2AA51qiEj0CdvzqiUPhvntLxdA1DBN6LLxF4Ubs5kLZVlFoDNl-1AFRO5yVvbNoY-9g388Jk19a9s4.jpeg"
                 alt="The Metanoia Journey"
                 fill
                 className="object-cover"

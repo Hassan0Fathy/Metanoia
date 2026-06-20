@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Image, { ImageProps } from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -15,11 +15,11 @@ export function ImageWithFallback({
   fallbackSrc = '/images/123.jpeg', 
   containerClassName = '',
   className = '',
+  fill,
   ...props 
 }: ImageWithFallbackProps) {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
-  const imgRef = useRef<HTMLImageElement>(null);
 
   // Reset loading and error states when the src changes
   useEffect(() => {
@@ -27,36 +27,44 @@ export function ImageWithFallback({
     setError(false);
   }, [src]);
 
-  useEffect(() => {
-    const img = imgRef.current;
-    if (!img) return;
+  const currentSrc = error || !src ? fallbackSrc : src;
 
-    // If the image has already loaded (e.g. from browser cache)
-    if (img.complete) {
-      setLoading(false);
-      return;
-    }
+  // When fill is used, next/image must be a direct child of the positioned container.
+  // We must NOT wrap it in another relative/overflow-hidden div.
+  if (fill) {
+    return (
+      <>
+        <AnimatePresence>
+          {loading && (
+            <motion.div 
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 z-10 bg-stone-900 flex items-center justify-center"
+            >
+              <div className="w-8 h-8 border-2 border-white/20 border-t-white/60 rounded-full animate-spin" />
+            </motion.div>
+          )}
+        </AnimatePresence>
+        
+        <Image
+          src={currentSrc}
+          alt={alt}
+          fill={fill}
+          onLoad={() => setLoading(false)}
+          onError={() => {
+            setError(true);
+            setLoading(false);
+          }}
+          className={`${className} transition-opacity duration-700 ${loading ? 'opacity-0' : 'opacity-100'}`}
+          {...props}
+        />
+      </>
+    );
+  }
 
-    const handleLoad = () => {
-      setLoading(false);
-    };
-
-    const handleError = () => {
-      setError(true);
-      setLoading(false);
-    };
-
-    img.addEventListener('load', handleLoad);
-    img.addEventListener('error', handleError);
-
-    return () => {
-      img.removeEventListener('load', handleLoad);
-      img.removeEventListener('error', handleError);
-    };
-  }, [src, error]); // Re-run when src or error state changes to handle fallbacks
-
+  // Non-fill mode: use a wrapper div for sizing control
   return (
-    <div className={`relative overflow-hidden ${props.fill ? 'w-full h-full' : ''} ${containerClassName}`}>
+    <div className={`relative overflow-hidden ${containerClassName}`}>
       <AnimatePresence>
         {loading && (
           <motion.div 
@@ -70,16 +78,16 @@ export function ImageWithFallback({
       </AnimatePresence>
       
       <Image
-        ref={imgRef}
-        src={error || !src ? fallbackSrc : src}
+        src={currentSrc}
         alt={alt}
+        onLoad={() => setLoading(false)}
+        onError={() => {
+          setError(true);
+          setLoading(false);
+        }}
         className={`${className} transition-opacity duration-700 ${loading ? 'opacity-0' : 'opacity-100'}`}
         {...props}
       />
-      
-      {/* Subtle overlay for better text contrast if needed by parent */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
     </div>
   );
 }
-
