@@ -9,7 +9,7 @@ const config: Config = {
     extend: {
       colors: {
         'ivory': '#F8F5F1',
-        'warmBeige': '#D7C7B8',
+        'warmBeige': '#000000ff',
         'softBeige': '#EFE7DE',
         'olive': '#6E7650',
         'brown': '#4E3B2E',

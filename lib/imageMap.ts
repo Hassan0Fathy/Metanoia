@@ -8,48 +8,77 @@ import heroImage from '../public/images/123.jpeg';
 
 const IMAGES = {
   hero: heroImage,
-  card1: '/images/BTPBFkviPt8PjEX_yJFXVYWFehggOAZR12GhDsvm8mRcMXx5Mvme0UHWASo__-hENZUpuEGCpTsxLQRgXFg-JKVi7Ly-62Q5b_DAFCGxHuk-tkTxHkiA9hfo0Km1Pooy4.jpeg',
-  card2: '/images/Ezv14wqiR7tFGq0zv77AXr334JC3WIBE40OtpizEVSQjUqJ2AA51qiEj0CdvzqiUPhvntLxdA1DBN6LLxF4Ubs5kLZVlFoDNl-1AFRO5yVvbNoY-9g388Jk19a9s4.jpeg',
-  card3: '/images/sanctuary-landscape.jpeg',
+  // Sanctuary Zones
+  hydrotherapyZone: '/images/Hydrotherapy pools.jpeg',
+  organicFarmZone: '/images/Organic farm.jpeg',
+  therapyZone: '/images/Zen garden.png',
+  hotelZone: '/images/Hotel rooms.jpeg',
+  shopsZone: '/images/Shops.jpeg',
+  amphitheaterZone: '/images/Nile amphitheater.jpeg',
+  // Experiences
+  familyHydro: '/images/Family hydrotherapy room.jpeg',
+  artTherapy: '/images/Art therapy studio.jpeg',
+  massageRoom: '/images/Massage room.jpeg',
+  infinityPool: '/images/Infinity pool.jpeg',
+  outdoorCafe: '/images/Outdoor cafe.jpeg',
+  // Architecture
+  layout: '/images/layout.jpeg',
+  elevation: '/images/Elevation.png',
 };
 
 export const IMAGE_MAP = {
   hero: IMAGES.hero,
-  fallback: IMAGES.card3,
+  fallback: IMAGES.hotelZone,
   
   // Journey Cards
   journeys: {
-    solo: IMAGES.card1,
-    couple: IMAGES.card2,
-    family: IMAGES.card3,
+    solo: IMAGES.infinityPool,
+    couple: IMAGES.outdoorCafe,
+    family: IMAGES.familyHydro,
   },
   
   // Accommodation
   accommodation: {
-    'ocean-villa': IMAGES.card1,
-    'garden-suite': IMAGES.card2,
-    'cliff-residence': IMAGES.card3,
+    'ocean-villa': IMAGES.hotelZone,
+    'garden-suite': IMAGES.hotelZone,
+    'cliff-residence': IMAGES.hotelZone,
   },
   
   // Activities
   activities: {
     default: IMAGES.hero,
-    'mineral-pool': IMAGES.card1,
-    'family-hydro': IMAGES.card2,
-    'private-hydro': IMAGES.card3,
-    'infinity-pool': IMAGES.card1,
-    'yoga-pavilion': IMAGES.card2,
-    counseling: IMAGES.card3,
-    'family-therapy': IMAGES.card1,
-    'art-therapy': IMAGES.card2,
-    'music-therapy': IMAGES.card3,
-    library: IMAGES.card1,
-    'pottery-workshop': IMAGES.card2,
-    'farm-experience': IMAGES.card3,
-    'garden-tour': IMAGES.card1,
-    'harvest-ritual': IMAGES.card2,
-    'farm-to-table': IMAGES.card3,
-    'herbal-tea-ceremony': IMAGES.card1,
-    'zen-meditation': IMAGES.card2,
+    'mineral-pool': IMAGES.infinityPool,
+    'family-hydro': IMAGES.familyHydro,
+    'private-hydro': IMAGES.massageRoom,
+    'infinity-pool': IMAGES.infinityPool,
+    'yoga-pavilion': IMAGES.therapyZone,
+    counseling: IMAGES.massageRoom,
+    'family-therapy': IMAGES.massageRoom,
+    'art-therapy': IMAGES.artTherapy,
+    'music-therapy': IMAGES.massageRoom,
+    library: IMAGES.therapyZone,
+    'pottery-workshop': IMAGES.artTherapy,
+    'farm-experience': IMAGES.organicFarmZone,
+    'garden-tour': IMAGES.organicFarmZone,
+    'harvest-ritual': IMAGES.organicFarmZone,
+    'farm-to-table': IMAGES.outdoorCafe,
+    'herbal-tea-ceremony': IMAGES.outdoorCafe,
+    'zen-meditation': IMAGES.therapyZone,
   },
+  
+  // Sanctuary Zones
+  zones: {
+    hydrotherapy: IMAGES.hydrotherapyZone,
+    farm: IMAGES.organicFarmZone,
+    quiet: IMAGES.therapyZone,
+    hotel: IMAGES.hotelZone,
+    shops: IMAGES.shopsZone,
+    amphitheater: IMAGES.amphitheaterZone,
+  },
+
+  // Architecture
+  architecture: {
+    layout: IMAGES.layout,
+    elevation: IMAGES.elevation,
+  }
 };

@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { ZONES } from '@/lib/constants';
+import { IMAGE_MAP } from '@/lib/imageMap';
 
 export default function SanctuaryPage() {
   return (
@@ -9,9 +11,9 @@ export default function SanctuaryPage() {
       {/* 1. HERO */}
       <section className="relative h-screen flex flex-col items-center justify-center text-center px-4">
         <Image 
-          src="/images/BTPBFkviPt8PjEX_yJFXVYWFehggOAZR12GhDsvm8mRcMXx5Mvme0UHWASo__-hENZUpuEGCpTsxLQRgXFg-JKVi7Ly-62Q5b_DAFCGxHuk-tkTxHkiA9hfo0Km1Pooy4.jpeg"
+          src={IMAGE_MAP.architecture.layout}
           fill
-          alt="Sanctuary Architecture"
+          alt="Sanctuary Architecture Masterplan"
           className="object-cover brightness-[0.7]"
           priority
         />
@@ -35,22 +37,15 @@ export default function SanctuaryPage() {
 
       {/* 3. ZONES */}
       <section className="container-luxury space-y-32">
-        {[
-          { title: 'Hydrotherapy Zone', desc: 'Thermal pools, hydrotherapy circuits, mineral baths, cold plunges, and restorative water experiences designed to rejuvenate body and mind.', img: '/images/123.jpeg' },
-          { title: 'Organic Farm & Workshops Zone', desc: 'A living organic farm where guests reconnect with nature through harvesting, cooking experiences, sustainability workshops, and mindful creation sessions.', img: '/images/sanctuary-landscape.jpeg' },
-          { title: 'Therapy & Quiet Zone', desc: 'Dedicated spaces for counseling, emotional healing, meditation, reflection, silence, and personal transformation.', img: '/images/Ezv14wqiR7tFGq0zv77AXr334JC3WIBE40OtpizEVSQjUqJ2AA51qiEj0CdvzqiUPhvntLxdA1DBN6LLxF4Ubs5kLZVlFoDNl-1AFRO5yVvbNoY-9g388Jk19a9s4.jpeg' },
-          { title: 'Hotel & Suites', desc: 'Luxury accommodations designed for deep rest, privacy, comfort, and immersive wellness living.', img: '/images/BTPBFkviPt8PjEX_yJFXVYWFehggOAZR12GhDsvm8mRcMXx5Mvme0UHWASo__-hENZUpuEGCpTsxLQRgXFg-JKVi7Ly-62Q5b_DAFCGxHuk-tkTxHkiA9hfo0Km1Pooy4.jpeg' },
-          { title: 'Metanoia Shops', desc: 'Curated boutiques offering artisan products, wellness essentials, handcrafted goods, organic produce, and exclusive Metanoia collections.', img: '/images/Ezv14wqiR7tFGq0zv77AXr334JC3WIBE40OtpizEVSQjUqJ2AA51qiEj0CdvzqiUPhvntLxdA1DBN6LLxF4Ubs5kLZVlFoDNl-1AFRO5yVvbNoY-9g388Jk19a9s4.jpeg' },
-          { title: 'Nile Amphitheater', desc: 'An open-air cultural venue overlooking the Nile, hosting performances, talks, ceremonies, music, and community gatherings.', img: '/images/sanctuary-landscape.jpeg' },
-        ].map((zone, i) => (
+        {ZONES.map((zone, i) => (
           <div key={i} className={`grid md:grid-cols-2 gap-16 items-center ${i % 2 !== 0 ? 'md:grid-flow-dense' : ''}`}>
             <div className={`aspect-[4/5] relative overflow-hidden ${i % 2 !== 0 ? 'md:col-start-2' : ''}`}>
-              <Image src={zone.img} fill alt={zone.title} className="object-cover" />
+              <Image src={zone.image} fill alt={zone.name} className="object-cover" />
             </div>
             <div className="space-y-6">
               <span className="text-olive text-sm uppercase tracking-[0.3em]">0{i+1}</span>
-              <h3 className="text-display-sm font-serif">{zone.title}</h3>
-              <p className="text-lg font-light">{zone.desc}</p>
+              <h3 className="text-display-sm font-serif">{zone.name}</h3>
+              <p className="text-lg font-light">{zone.description}</p>
             </div>
           </div>
         ))}

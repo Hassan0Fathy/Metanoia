@@ -1,6 +1,7 @@
 'use client';
 
-import { EXPERIENCES } from '@/lib/constants';
+import { EXPERIENCES, ACTIVITIES } from '@/lib/constants';
+import { IMAGE_MAP } from '@/lib/imageMap';
 import HeroSection from '@/components/journeys/HeroSection';
 import StorySection from '@/components/journeys/StorySection';
 import BraceletHighlight from '@/components/journeys/BraceletHighlight';
@@ -10,14 +11,17 @@ import { Journey } from '@/lib/types';
 
 export default function ExperiencesPage() {
   // Mapping experiences to look like journeys for the StorySection layout
-  const mappedExperiences: Journey[] = EXPERIENCES.map((exp, i) => ({
-    id: exp.id,
-    title: exp.title,
-    subtitle: `Signature Experience 0${i + 1}`,
-    description: exp.description,
-    image: '/images/123.jpeg', // Placeholder
-    groupSize: 'Individual',
-  }));
+  const mappedExperiences: Journey[] = EXPERIENCES.map((exp, i) => {
+    const activity = ACTIVITIES.find(a => a.id === exp.id);
+    return {
+      id: exp.id,
+      title: exp.title,
+      subtitle: `Signature Experience 0${i + 1}`,
+      description: exp.description,
+      image: activity ? IMAGE_MAP.activities[activity.id as keyof typeof IMAGE_MAP.activities] || IMAGE_MAP.fallback : IMAGE_MAP.fallback,
+      groupSize: 'Individual',
+    };
+  });
 
   const features: Record<string, string[]> = {
      // Adding some dummy features for the visual layout

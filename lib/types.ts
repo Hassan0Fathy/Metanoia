@@ -11,7 +11,7 @@ export interface Journey {
   subtitle: string;
   description: string;
   groupSize: string;
-  image?: string;
+  image?: string | any; // Allow StaticImageData from Next.js imports
 }
 
 /**
@@ -57,7 +57,7 @@ export interface Shop {
   name: string;
   description: string;
   tagline: string;
-  image?: string;
+  image?: string | any;
 }
 
 /**
@@ -68,7 +68,7 @@ export interface Zone {
   name: string;
   description: string;
   facilities: string[];
-  image?: string;
+  image?: string | any;
   activities?: Activity[];
 }
 
