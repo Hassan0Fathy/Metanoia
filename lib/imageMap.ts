@@ -21,6 +21,10 @@ const IMAGES = {
   massageRoom: '/images/Massage room.jpeg',
   infinityPool: '/images/Infinity pool.jpeg',
   outdoorCafe: '/images/Outdoor cafe.jpeg',
+  // Cinematic Journeys
+  soloCinematic: '/images/single.png',
+  coupleCinematic: '/images/couple.png',
+  familyCinematic: '/images/Family.png',
   // Architecture
   layout: '/images/layout.jpeg',
   elevation: '/images/Elevation.png',
@@ -32,9 +36,9 @@ export const IMAGE_MAP = {
   
   // Journey Cards
   journeys: {
-    solo: IMAGES.infinityPool,
-    couple: IMAGES.outdoorCafe,
-    family: IMAGES.familyHydro,
+    solo: IMAGES.soloCinematic,
+    couple: IMAGES.coupleCinematic,
+    family: IMAGES.familyCinematic,
   },
   
   // Accommodation
